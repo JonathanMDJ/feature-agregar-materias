@@ -12,5 +12,20 @@ import java.util.stream.Collectors;
 
 @Service
 public class MateriasService {
+    @Autowired
+    private MateriasRepository materiasRepository;
+
+    // Historia de usuario Agregar Materias - Jonathan Molina De Jesús
+    public Materias agregarMateria(MateriasAddDto materiaDto) {
+        // Crear una nueva instancia de Materias
+        Materias nuevaMateria = new Materias();
+        nuevaMateria.setClave(materiaDto.getClave());
+        nuevaMateria.setNombre(materiaDto.getNombre());
+        nuevaMateria.setDescripcion(materiaDto.getDescripcion());
+        nuevaMateria.setActivo(true);
+
+        // Guardar y retornar la nueva materia
+        return materiasRepository.save(nuevaMateria);
+    }
 
 }
