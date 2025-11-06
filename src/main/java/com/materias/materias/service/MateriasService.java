@@ -28,4 +28,14 @@ public class MateriasService {
         return materiasRepository.save(nuevaMateria);
     }
 
+    //historia de usuario eliminar- Juan Antonio Garcia Perez
+       public boolean deleteMateria(Long id) {
+        return materiaRepository.findById(id)
+                .map(materia -> {
+                    materia.setStatus("INACTIVO");
+                    materiaRepository.save(materia);
+                    return true;
+                })
+                .orElse(false);
+    }
 }

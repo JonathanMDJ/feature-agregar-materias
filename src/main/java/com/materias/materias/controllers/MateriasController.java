@@ -15,18 +15,4 @@ import com.materias.materias.service.MateriasService;
 @RestController
 @RequestMapping("/api/materias")
 public class MateriasController {
-
-    @Autowired
-    private MateriasService materiasService;
-
-    /**
-     * Endpoint para agregar una nueva materia al sistema
-     * param materiaDto DTO con los datos de la materia a crear
-     * return La materia creada
-     */
-    @PostMapping("/agregar-materia")
-    public ResponseEntity<Materias> agregarMateria(@RequestBody MateriasAddDto materiaDto) {
-        Materias newMateria = materiasService.agregarMateria(materiaDto);
-        return ResponseEntity.ok(newMateria);
-    }
 }
