@@ -1,8 +1,10 @@
-PUT http://localhost:8101/api/materias/editar-materias/1 HTTP/1.1
+### Agregar una nueva materia
+POST http://localhost:8101/api/materias/agregar-materia HTTP/1.1
 Content-Type: application/json
 
 {
-    "clave": "DWI",
-    "nombre": "Desarrollo Web Integral",
-    "descripcion": "Materia de desarrollo web con spring boot y react"
+    "clave": "POO",
+    "nombre": "Programación Orientada a Objetos",
+    "descripcion": "Materia fundamental de programación orientada a objetos",
+    "activo": 1
 }
